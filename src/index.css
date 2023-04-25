@@ -14,3 +14,12 @@
     @apply font-rubik !overflow-x-hidden;
   }
 }
+@layer components {
+  .pagination {
+    @apply flex items-center justify-end pt-10 pb-20;
+  }
+
+  .pagination .btn {
+    @apply first:rounded-r-none last:rounded-l-none cursor-pointer border-2 bg-[#F1F1F1] py-2 text-[#767676] mx-2 px-5 border-[#F1F1F1];
+  }
+}
