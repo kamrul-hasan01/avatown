@@ -4,6 +4,8 @@ module.exports = {
   theme: {
     fontFamily: {
       inter: ["Inter", "sans-serif"],
+      lato: ["Lato", "sans-serif"],
+      rubik: ["Rubik", "sans-serif"],
     },
     container: {
       padding: {

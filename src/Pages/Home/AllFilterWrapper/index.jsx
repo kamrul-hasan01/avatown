@@ -27,7 +27,6 @@ const AllFilterOptions = () => {
         "$40 to $50",
         "$60 to $60",
         "$70 & above",
-        "Others",
       ],
     },
     {
@@ -101,16 +100,19 @@ const AllFilterOptions = () => {
               {item?.options?.map((item, index) => {
                 return (
                   <li
-                    class="pl-[10px] text-xs font-medium flex items-center my-[1px]"
+                    className="pl-[10px] text-xs font-medium flex items-center my-[1px]"
                     key={index}
                   >
                     <input
                       id={item}
                       type="checkbox"
                       value=""
-                      class="w-4 h-4 text-blue-60 rounded   focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-700 border-gray-600"
+                      className="w-4 h-4 text-blue-60 rounded   focus:ring-blue-600 ring-offset-gray-800 focus:ring-2 bg-gray-700 border-gray-600 cursor-pointer"
                     />
-                    <label for={item} class="ml-2 text-sm font-medium">
+                    <label
+                      htmlFor={item}
+                      className="ml-2 text-sm font-medium cursor-pointer"
+                    >
                       {item}
                     </label>
                   </li>
