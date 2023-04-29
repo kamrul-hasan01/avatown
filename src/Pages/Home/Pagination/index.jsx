@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { LeftAngleIcon, RightAngleIcon } from "../../../SVGIcons";
 
@@ -54,11 +55,11 @@ const Pagination = ({
 
   return (
     <div className="container !px-4 lg:!px-12 ">
-      <div className="pagination">
+      <div className="pagination justify-center">
         {/* go to previous page button */}
         <button
           onClick={goToPreviousPage}
-          className={`btn ${currentPage == 1 && "!cursor-not-allowed"}`}
+          className={`btn ${currentPage === 1 && "!cursor-not-allowed"}`}
         >
           <LeftAngleIcon />
         </button>
@@ -69,9 +70,7 @@ const Pagination = ({
           <button
             key={index}
             onClick={changePage}
-            className={`btn ${
-              currentPage == item && "!bg-[purple] !text-white"
-            }`}
+            className={`btn ${currentPage === item && "!bg-[#D9D9D9]"}`}
           >
             <span>{item}</span>
           </button>
@@ -81,7 +80,9 @@ const Pagination = ({
         {/* go to next page button */}
         <button
           onClick={goToNextPage}
-          className={`btn ${currentPage == totalPage && "!cursor-not-allowed"}`}
+          className={`btn ${
+            currentPage === totalPage && "!cursor-not-allowed"
+          }`}
         >
           <RightAngleIcon />
         </button>

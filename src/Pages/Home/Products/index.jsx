@@ -1,12 +1,12 @@
 import React from "react";
 import SingleProduct from "./SingleProduct";
 
-const Products = ({ content }) => {
+const Products = ({ content, handleAddToCart }) => {
   return (
     <>
       <div className="flex justify-between items-center px-2 py-2">
         <p className="text-[22px] font-medium">All Items</p>
-        <select class=" border-[1px] border-[#6A6A6A] px-2 py-1 rounded text-xs font-medium">
+        <select className=" border-[1px] border-[#6A6A6A] px-2 py-1 rounded text-xs font-medium">
           <option selected>Featured</option>
           <option value="low">Price: Low to High</option>
           <option value="high">Price: High to Low</option>
@@ -17,7 +17,13 @@ const Products = ({ content }) => {
       </div>
       <div className="flex flex-wrap">
         {content?.map((item, idx) => {
-          return <SingleProduct key={idx} content={item} />;
+          return (
+            <SingleProduct
+              key={idx}
+              content={item}
+              handleAddToCart={handleAddToCart}
+            />
+          );
         })}
       </div>
     </>

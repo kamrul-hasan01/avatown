@@ -2,28 +2,22 @@ import React, { useState } from "react";
 import { CopyIcon, HeartIcon, ShoppingIcon } from "../../../SVGIcons";
 import SafeImage from "../../../SafeImage";
 
-const SingleProduct = ({ content }) => {
+const SingleProduct = ({ content, handleAddToCart }) => {
   const { title, rating, price, img_url, avt_name, likes, category } = content;
   const [empty, setEmpty] = useState(false);
   const handleCopyClick = () => {};
-  const handleCartClick = (id) => {
-    console.log(id);
-  };
 
   return (
     <div className="w-full md:w-1/2 lg:w-4/12 xl:w-3/12 2xl:w-2/12 p-[2.5px] ">
       <div className=" bg-[#FFFFFF] rounded-[7px] px-[5px] pb-[5px] relative">
         <div
           className="bg-[#4C45F6] w-[80px] flex items-center  justify-evenly rounded py-1  cursor-pointer absolute right-3 top-2 "
-          onClick={() => handleCartClick(title)}
+          onClick={() => handleAddToCart(content)}
         >
           <ShoppingIcon />
           <p className="text-white  text-sm font-medium">Add</p>
         </div>
-        <SafeImage
-          src={img_url}
-          customStyle="w-full rounded-[7px] cursor-pointer"
-        />
+        <SafeImage src={img_url} customStyle="w-full rounded-[7px] " />
         <p className="text-base font-medium leading-[19px] py-2">{title}</p>
         <p className="flex  items-center justify-between">
           <span className="text-[#6A6A6A] text-[11px] font-medium">
