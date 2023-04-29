@@ -8,9 +8,9 @@ import Products from "./Products";
 
 const Home = () => {
   const [data, setData] = useState([]);
-  console.log("data :", data);
+  const [shortValue, setShortValue] = useState("default");
   const [filterData, setFilterData] = useState([]);
-  console.log("filterData :", filterData);
+
   const [cart, setCart] = useState([]);
   // cart add to cart
   const handleAddToCart = (item) => {
@@ -88,11 +88,15 @@ const Home = () => {
   useEffect(() => {
     getData();
   }, []);
+
+  useEffect(() => {
+    handleProductSorting(shortValue);
+  }, [shortValue]);
   return (
     <>
       <Header cart={cart} />
 
-      <section className="flex flex-wrap bg-[#FAFAFA] h-[calc(100vh-9vh)]  overflow-y-auto relative">
+      <section className="flex flex-wrap bg-[#FAFAFA] h-[calc(100vh-10vh)]  overflow-y-auto relative">
         <div className="w-[256px] fixed top-[9vh] left-0 h-full overflow-y-auto  pb-16">
           <AllFilterOptions />
         </div>
@@ -100,7 +104,7 @@ const Home = () => {
           <Products
             content={paginateData}
             handleAddToCart={handleAddToCart}
-            handleProductSorting={handleProductSorting}
+            setShortValue={setShortValue}
           />
           {filterData?.length > 10 && (
             <Pagination

@@ -2,12 +2,12 @@ import React from "react";
 import CustomShorting from "../CustomShorting";
 import SingleProduct from "./SingleProduct";
 
-const Products = ({ content, handleAddToCart, handleProductSorting }) => {
+const Products = ({ content, handleAddToCart, setShortValue }) => {
   return (
     <>
       <div className="flex justify-between items-center px-2 py-2">
         <p className="text-[22px] font-medium">All Items</p>
-        <CustomShorting handleProductSorting={handleProductSorting} />
+        <CustomShorting setShortValue={setShortValue} />
       </div>
       <div className="flex flex-wrap">
         {content?.map((item, idx) => {
