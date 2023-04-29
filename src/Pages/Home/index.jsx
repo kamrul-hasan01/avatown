@@ -10,6 +10,13 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [shortValue, setShortValue] = useState("default");
   const [filterData, setFilterData] = useState([]);
+  const [category, setCategory] = useState(null);
+
+  const [price, setPrice] = useState(null);
+  // console.log("price :", price);
+  const [content, setContent] = useState(null);
+  const [polygon, setPolygon] = useState(null);
+  const [upload, setUpload] = useState(null);
 
   const [cart, setCart] = useState([]);
   // cart add to cart
@@ -25,13 +32,72 @@ const Home = () => {
       setCart([...cart, { ...item, qty: 1 }]);
     }
   };
+  // all filtering
+  const handleFilterSelect = (type, value, checked) => {
+    if (type.toLowerCase() === "category") {
+      setCategory(value);
+    } else if (type.toLowerCase() === "price") {
+      console.log("type :", type, "value :", value, "checked :", checked);
+      if (checked) {
+        if (price?.length && !price.includes(value)) {
+          let priceData = [...price, value];
+          setPrice(priceData);
+        } else {
+          setPrice([value]);
+        }
+      } else {
+        let priceData = price.filter((item) => item !== value);
+        setPrice(priceData);
+      }
+    } else if (type.toLowerCase() === "content") {
+      if (checked) {
+        if (content?.length && !content.includes(value.toLowerCase())) {
+          let contentData = [...content, value.toLowerCase()];
+          setContent(contentData);
+        } else {
+          setContent([value.toLowerCase()]);
+        }
+      } else {
+        let contentData = content.filter(
+          (item) => item !== value.toLowerCase()
+        );
+        setContent(contentData);
+      }
+    } else if (type.toLowerCase() === "polygon amount") {
+      if (checked) {
+        if (polygon?.length && !polygon.includes(value.toLowerCase())) {
+          let polygonData = [...polygon, value.toLowerCase()];
+          setPolygon(polygonData);
+        } else {
+          setPolygon([value.toLowerCase()]);
+        }
+      } else {
+        let polygonData = polygon.filter(
+          (item) => item !== value.toLowerCase()
+        );
+        setPolygon(polygonData);
+      }
+    } else if (type.toLowerCase() === "auto upload support") {
+      if (checked) {
+        if (upload?.length && !upload?.includes(value.toLowerCase())) {
+          let uploadData = [...upload, value.toLowerCase()];
+          setUpload(uploadData);
+        } else {
+          setUpload([value.toLowerCase()]);
+        }
+      } else {
+        let uploadData = upload?.filter((item) => item !== value.toLowerCase());
+        setUpload(uploadData);
+      }
+    }
+  };
+  console.log("content :", polygon);
   // product sorting
-  const handleProductSorting = (shoringValue) => {
-    if (shoringValue === "default") {
+  const handleProductSorting = () => {
+    if (shortValue === "default") {
       getData();
     } else {
-      let shorting = shoringValue.split(" ");
-
+      let shorting = shortValue.split(" ");
       let type = shorting[0];
       let order = shorting[1];
       let shortedData = data?.sort((a, b) => {
@@ -56,7 +122,35 @@ const Home = () => {
         }
       });
       setFilterData(shortedData);
-      paginateCalculation();
+    }
+  };
+  // Products filter
+  const handleProductFilter = () => {
+    let lowerPricing = 0;
+    let higherPricing = 0;
+    let lowerPolygon = 0;
+    let higherPolygon = 0;
+    if (price?.length) {
+      const priceData = price
+
+        ?.map((str) => parseInt(str))
+        .sort((a, b) => a - b);
+      lowerPricing = priceData[0];
+
+      higherPricing = priceData[priceData.length - 1];
+      console.log("priceData :", priceData);
+    }
+    const test = price.map((item) => {
+      console.log("item :", item);
+    });
+    console.log("test :", test);
+    if (polygon?.length) {
+      const polygonData = polygon
+        ?.map((str) => parseInt(str))
+        .sort((a, b) => a - b);
+      lowerPolygon = polygonData[0];
+
+      higherPolygon = polygonData[polygonData.length - 1];
     }
   };
 
@@ -71,7 +165,6 @@ const Home = () => {
     setStartIndex(currentPage * ParPageData - ParPageData);
     //  set end index
     setEndIndex(startIndex + ParPageData);
-
     // set current page data
     setPaginateData(filterData?.slice(startIndex, endIndex));
   };
@@ -81,7 +174,6 @@ const Home = () => {
   const getData = async () => {
     const response = await fetch("./data/products.json");
     const result = await response.json();
-
     setData(result);
     setFilterData(result);
   };
@@ -90,21 +182,27 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    handleProductSorting(shortValue);
-  }, [shortValue]);
+    shortValue && handleProductSorting();
+    handleProductFilter();
+    paginateCalculation();
+  }, [shortValue, category, content, price, polygon, upload]);
+
   return (
     <>
       <Header cart={cart} />
 
       <section className="flex flex-wrap bg-[#FAFAFA] h-[calc(100vh-10vh)]  overflow-y-auto relative">
         <div className="w-[256px] fixed top-[9vh] left-0 h-full overflow-y-auto  pb-16">
-          <AllFilterOptions />
+          <AllFilterOptions
+            handleFilter={handleFilterSelect}
+            category={category}
+          />
         </div>
         <div className="w-[calc(100%-256px)]  ml-[256px]">
           <Products
             content={paginateData}
             handleAddToCart={handleAddToCart}
-            setShortValue={setShortValue}
+            handleShort={setShortValue}
           />
           {filterData?.length > 10 && (
             <Pagination

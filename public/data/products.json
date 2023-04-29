@@ -7,7 +7,7 @@
     "img_url": "VRC image A(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - human  - male",
+    "category": "full avatar - human based  - male",
     "content": "PCVR",
     "polygon": 7500,
     "upload": "supported"
@@ -33,7 +33,7 @@
     "img_url": "VRC image C(M).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - human  - female",
+    "category": "full avatar - human based  - female",
     "content": "Other",
     "polygon": 75500,
     "upload": "supported"
@@ -46,7 +46,7 @@
     "img_url": "VRC image D(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - robot ",
+    "category": "full avatar - robot based ",
     "content": "Quest",
     "polygon": 500,
     "upload": "unsupported"
@@ -59,7 +59,7 @@
     "img_url": "VRC image E(M).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - human  - female",
+    "category": "full avatar - human based  - female",
     "content": "PCVR",
     "polygon": 47500,
     "upload": "supported"
@@ -85,7 +85,7 @@
     "img_url": "VRC image G(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - human  - female",
+    "category": "full avatar - human based  - female",
     "content": "PCVR",
     "polygon": 15500,
     "upload": "supported"
@@ -98,7 +98,7 @@
     "img_url": "VRC image H(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - robot ",
+    "category": "full avatar - robot based ",
     "content": "Quest",
     "polygon": 47000,
     "upload": "unsupported"
@@ -111,7 +111,7 @@
     "img_url": "VRC image I(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - human  - female",
+    "category": "full avatar - human based  - female",
     "content": "Quest",
     "polygon": 37500,
     "upload": "supported"
@@ -124,7 +124,7 @@
     "img_url": "VRC image J(M).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - human  - male",
+    "category": "full avatar - human based  - male",
     "content": "Quest",
     "polygon": 74500,
     "upload": "unsupported"
@@ -137,7 +137,7 @@
     "img_url": "VRC image K(M).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - human  - unisex",
+    "category": "full avatar - human based  - unisex",
     "content": "Other",
     "polygon": 12500,
     "upload": "unsupported"
@@ -150,7 +150,7 @@
     "img_url": "VRC image L(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - robot ",
+    "category": "full avatar - robot based ",
     "content": "Other",
     "polygon": 10500,
     "upload": "supported"
@@ -163,7 +163,7 @@
     "img_url": "VRC image M(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - human  - unisex",
+    "category": "full avatar - human based  - unisex",
     "content": "PCVR",
     "polygon": 17500,
     "upload": "unsupported"
@@ -189,7 +189,7 @@
     "img_url": "VRC image O(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - human  - unisex",
+    "category": "full avatar - human based  - unisex",
     "content": "Quest",
     "polygon": 67500,
     "upload": "unsupported"
@@ -202,7 +202,7 @@
     "img_url": "VRC image P(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - robot ",
+    "category": "full avatar - robot based ",
     "content": "PCVR",
     "polygon": 37500,
     "upload": "supported"
@@ -215,7 +215,7 @@
     "img_url": "VRC image Q(M).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - human  - unisex",
+    "category": "full avatar - human based  - unisex",
     "content": "PCVR",
     "polygon": 47500,
     "upload": "unsupported"
@@ -228,7 +228,7 @@
     "img_url": "VRC image R(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - animal & mythical creature ",
+    "category": "full avatar - animal & mythical creature based ",
     "content": "Other",
     "polygon": 67500,
     "upload": "supported"
@@ -254,7 +254,7 @@
     "img_url": "VRC image T(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - animal & mythical creature ",
+    "category": "full avatar - animal & mythical creature based ",
     "content": "PCVR",
     "polygon": 45500,
     "upload": "supported"
@@ -267,7 +267,7 @@
     "img_url": "VRC image U(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - human  - male",
+    "category": "full avatar - human based  - male",
     "content": "Other",
     "polygon": 5500,
     "upload": "supported"
@@ -280,7 +280,7 @@
     "img_url": "VRC image V(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - animal & mythical creature ",
+    "category": "full avatar - animal & mythical creature based ",
     "content": "PCVR",
     "polygon": 77500,
     "upload": "unsupported"
@@ -306,7 +306,7 @@
     "img_url": "VRC image X(F).png",
     "avt_name": "avatar Joe's",
     "likes": "100",
-    "category": "full avatar - animal & mythical creature ",
+    "category": "full avatar - animal & mythical creature based ",
     "content": "Quest",
     "polygon": 100000,
     "upload": "supported"

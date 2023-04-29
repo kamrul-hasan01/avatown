@@ -1,9 +1,9 @@
 import React from "react";
 
-const CustomShorting = ({ setShortValue }) => {
+const CustomShorting = ({ handleShort }) => {
   return (
     <select
-      onChange={(e) => setShortValue(e.target.value)}
+      onChange={(e) => handleShort(e.target.value)}
       className=" border-[1px] border-[#6A6A6A] px-2 py-1 rounded text-xs font-medium"
     >
       <option value="default" selected>
