@@ -9,7 +9,7 @@ import {
 const Header = ({ cart }) => {
   return (
     <header
-      className="min-h-[65px] flex items-center"
+      className="min-h-[65px] flex items-center relative z-[100]"
       style={{ background: "linear-gradient(90deg, #391C84 0%, #801F8B 100%)" }}
     >
       <nav className="flex justify-between items-center w-full">

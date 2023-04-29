@@ -18,7 +18,10 @@ const SingleProduct = ({ content, handleAddToCart }) => {
           <p className="text-white  text-sm font-medium">Add</p>
         </div>
         <SafeImage src={img_url} customStyle="w-full rounded-[7px] " />
-        <p className="text-base font-medium leading-[19px] py-2">{title}</p>
+        <p className="text-base font-medium leading-[19px] py-2">
+          {content?.id}
+          {title}
+        </p>
         <p className="flex  items-center justify-between">
           <span className="text-[#6A6A6A] text-[11px] font-medium">
             {" "}
