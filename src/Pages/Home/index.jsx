@@ -11,9 +11,7 @@ const Home = () => {
   const [shortValue, setShortValue] = useState("default");
   const [filterData, setFilterData] = useState([]);
   const [category, setCategory] = useState(null);
-
   const [price, setPrice] = useState(null);
-  // console.log("price :", price);
   const [content, setContent] = useState(null);
   const [polygon, setPolygon] = useState(null);
   const [upload, setUpload] = useState(null);
@@ -124,35 +122,6 @@ const Home = () => {
       setFilterData(shortedData);
     }
   };
-  // Products filter
-  const handleProductFilter = () => {
-    let lowerPricing = 0;
-    let higherPricing = 0;
-    let lowerPolygon = 0;
-    let higherPolygon = 0;
-    if (price?.length) {
-      const priceData = price
-
-        ?.map((str) => parseInt(str))
-        .sort((a, b) => a - b);
-      lowerPricing = priceData[0];
-
-      higherPricing = priceData[priceData.length - 1];
-      console.log("priceData :", priceData);
-    }
-    const test = price.map((item) => {
-      console.log("item :", item);
-    });
-    console.log("test :", test);
-    if (polygon?.length) {
-      const polygonData = polygon
-        ?.map((str) => parseInt(str))
-        .sort((a, b) => a - b);
-      lowerPolygon = polygonData[0];
-
-      higherPolygon = polygonData[polygonData.length - 1];
-    }
-  };
 
   // ?pagination  info
   let ParPageData = 12;
@@ -183,9 +152,8 @@ const Home = () => {
 
   useEffect(() => {
     shortValue && handleProductSorting();
-    handleProductFilter();
     paginateCalculation();
-  }, [shortValue, category, content, price, polygon, upload]);
+  }, [shortValue]);
 
   return (
     <>
